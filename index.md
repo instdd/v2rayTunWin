@@ -1,3 +1,6 @@
+---
+title: Инструкция для v2RayTun
+---
 # **Windows-v2RayTun**
 
 Сентябрь 6, 2025
