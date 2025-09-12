@@ -10,7 +10,7 @@ title: Инструкция для v2RayTun
 **1. Загрузка приложения:**
 
 Скачайте установочный файл https://storage.v2raytun.com/v2RayTun_Setup.exe
-Если эта ссылка заблокирована, попробуйте скачать [тут]([url](https://mega.nz/file/lip1jbRY#oX1nK2RmKJ6jtvACNzx8ennc_XIrgQG6UcKRIl6zRr4)) (нажмите на слово "тут")
+Если эта ссылка заблокирована, попробуйте скачать отсюда: https://u.to/Z7NXIg
 
 Установите приложение "v2RayTun" запустив скачанный файл.
 
