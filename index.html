@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция для v2RayTun</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0f1117;
+            color: #e0e0e0;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #fff;
+            font-size: 1.8em;
+            margin-bottom: 8px;
+        }
+        .date {
+            color: #888;
+            margin-bottom: 24px;
+        }
+        h2 {
+            color: #58a6ff;
+            font-size: 1.2em;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 12px 0 20px;
+            border: 1px solid #2a2d35;
+        }
+
+        /* Subscription link block */
+        .sub-block {
+            background: #1a2332;
+            border: 1px solid #1f6feb;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0 28px;
+        }
+        .sub-block h3 {
+            color: #58a6ff;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        .sub-link-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .sub-link-input {
+            flex: 1;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            color: #c9d1d9;
+            padding: 10px 14px;
+            font-size: 14px;
+            font-family: monospace;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .copy-btn {
+            background: #238636;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover {
+            background: #2ea043;
+        }
+        .copy-btn.copied {
+            background: #1f6feb;
+        }
+
+        .step-note {
+            background: #1c1c1c;
+            border-left: 3px solid #f0883e;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+            color: #f0883e;
+            font-size: 0.95em;
+        }
+
+        .footer {
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #2a2d35;
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Windows — v2RayTun</h1>
+        <p class="date">Сентябрь 6, 2025</p>
+
+        <p><strong>Установка v2RayTun:</strong></p>
+
+        <h2>1. Загрузка приложения</h2>
+        <p>
+            Скачайте установочный файл:
+            <a href="https://storage.v2raytun.com/v2RayTun_Setup.exe">https://storage.v2raytun.com/v2RayTun_Setup.exe</a>
+        </p>
+        <p>
+            Если эта ссылка заблокирована, попробуйте скачать отсюда:
+            <a href="https://u.to/Z7NXIg">https://u.to/Z7NXIg</a>
+        </p>
+        <p>Установите приложение «v2RayTun» запустив скачанный файл.</p>
+
+        <h2>2. Настройка v2RayTun</h2>
+        <p>Запустите приложение v2RayTun.</p>
+
+        <!-- Dynamic subscription block (shown only when URL contains a sub link) -->
+        <div id="sub-block" class="sub-block" style="display:none;">
+            <h3>Ваша ссылка для подключения:</h3>
+            <div class="sub-link-row">
+                <input type="text" id="sub-link" class="sub-link-input" readonly>
+                <button class="copy-btn" id="copy-btn" onclick="copyLink()">Копировать</button>
+            </div>
+        </div>
+
+        <!-- Fallback: shown when no sub link in URL -->
+        <div id="bot-step">
+            <p>Скопируйте вашу ссылку для подключения из бота (нажмите кнопку «⚡️ Подключиться!»)</p>
+            <img src="link.png" alt="Ссылка из бота">
+        </div>
+
+        <p><strong>Добавление профиля:</strong></p>
+        <p>Нажмите на значок «+».</p>
+        <img src="img.png" alt="Шаг 1">
+
+        <p>Выберите «Добавить из буфера обмена».</p>
+        <img src="img_1.png" alt="Шаг 2">
+
+        <p>Появится новая подписка ниже</p>
+        <img src="img_2.png" alt="Шаг 3">
+
+        <p>Выберите подходящую локацию.</p>
+        <img src="img_3.png" alt="Шаг 4">
+
+        <p>Нажмите кнопку «Подключиться».</p>
+        <img src="img_4.png" alt="Шаг 5">
+
+        <p>Дождитесь изменения статуса на «Подключено».</p>
+        <img src="img_5.png" alt="Шаг 6">
+
+        <p>Вы великолепны! Наслаждайтесь интернетом без ограничений!</p>
+
+        <p>Если заблокированные ресурсы не открываются — проверьте настройки:</p>
+        <img src="img_6.jpg" alt="Настройки 1">
+
+        <p>Попробуйте изменить режим и проверить заново</p>
+        <img src="img_7.jpg" alt="Настройки 2">
+
+        <div class="footer">
+            Если у вас возникли сложности — пожалуйста напишите в техподдержку. Мы поможем.
+        </div>
+    </div>
+
+    <script>
+        function getSubLink() {
+            var hash = window.location.hash;
+            if (hash && hash.length > 1) {
+                return decodeURIComponent(hash.substring(1));
+            }
+            return null;
+        }
+
+        function copyLink() {
+            var link = document.getElementById('sub-link').value;
+            navigator.clipboard.writeText(link).then(function() {
+                var btn = document.getElementById('copy-btn');
+                btn.textContent = 'Скопировано!';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    btn.textContent = 'Копировать';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        (function() {
+            var subLink = getSubLink();
+            if (subLink) {
+                document.getElementById('sub-block').style.display = 'block';
+                document.getElementById('sub-link').value = subLink;
+                document.getElementById('bot-step').style.display = 'none';
+            }
+        })();
+    </script>
+</body>
+</html>
