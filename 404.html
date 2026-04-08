@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        (function() {
+            var path = window.location.pathname;
+            // Find subscription URL in the path (looks for http:// or https://)
+            var match = path.match(/\/(https?:\/{1,2}.+)$/);
+            if (match) {
+                var subUrl = match[1];
+                // Restore double slash if browser normalized https:// to https:/
+                subUrl = subUrl.replace(/^(https?:\/)([^\/])/, '$1/$2');
+                window.location.replace('/v2rayTunWin/#' + subUrl);
+            } else {
+                window.location.replace('/v2rayTunWin/');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <p>Перенаправление...</p>
+</body>
+</html>
